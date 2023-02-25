@@ -1,23 +1,46 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
-    purge: [
-      './src/**/*.html',
-      './src/**/*.vue',
-      './src/**/*.jsx'
-    ],
-    darkMode: false, // or 'media' or 'class'
-    theme: {
-      extend: {
-         fontSize: {
-            'xxs': '.75rem',
-            'xxxs': '.65rem',
-            'xxxxs': '.55rem',
-            'xxxxxs': '.35rem'
-          }
-      }
+  purge: [
+    "./components/**/*.{vue,js}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./nuxt.config.{js,ts}",
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary-light": "#F7F8FC",
+        "secondary-light": "#FFFFFF",
+        "ternary-light": "#f6f7f8",
+
+        "primary-dark": "#0D2438",
+        "secondary-dark": "#102D44",
+        "ternary-dark": "#1E3851",
+      },
+      container: {
+        padding: {
+          DEFAULT: "1rem",
+          sm: "2rem",
+          lg: "5rem",
+          xl: "6rem",
+          "2xl": "8rem",
+        },
+      },
+      fontSize: {
+        'xxs': '.75rem',
+        'xxxs': '.65rem',
+        'xxxxs': '.55rem',
+        'xxxxxs': '.35rem'
+      },
     },
-    variants: {
-      extend: {},
+  },
+  variants: {
+    extend: {
+      opacity: ["disabled"],
     },
-    plugins: [],
-  }
-  
+  },
+  // plugins: [require("@tailwindcss/forms")],
+};
